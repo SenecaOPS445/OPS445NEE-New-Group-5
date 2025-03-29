@@ -9,7 +9,7 @@ This script is designed manage users on a Linux system. It supports a variety of
 Usage:
 ------
     python3 assignment2.py <action> [--username USERNAME] [--group GROUP]
-s
+
     - <action>: The task to perform. Current available actions are:
         * create     - Create a new user. (Requires ‘sudo’)
         * delete     - Delete an existing user. (Requires ‘sudo’)
@@ -21,7 +21,9 @@ s
         * group      - Change the group of a specific user. (Requires ‘sudo’)
         * password   - Change the password for a specific user. (Requires ‘sudo’)
 
-    - [--username USERNAME]: Specify the username for actions that require a user. This option is mandatory for `create`, `delete`, `size`, `group`, and `password` actions.
+    - [--username USERNAME]: Specify the username for actions that require a user. 
+    This option is mandatory for `create`, `delete`, `size`, `group`, and `password` actions.
+    
     - [--group GROUP]: Specify the group name when using the `group` action.
 
 

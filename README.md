@@ -28,31 +28,31 @@ s
 Examples:
 ---------
 1. Create a user:
-    python3 assignment2.py create --username gandalf
+    `python3 assignment2.py create --username gandalf`
 
 2. Delete a user:
-    python3 assignment2.py delete --username gandalf
+    `python3 assignment2.py delete --username gandalf`
 
 3. List all human users:
-    python3 assignment2.py list
+    `python3 assignment2.py list`
 
 4. Find locked or disabled accounts:
-    python3 assignment2.py locked
+    `python3 assignment2.py locked`
 
 5. Check the size of a user's home directory:
-    python3 assignment2.py size --username gandalf
+    `python3 assignment2.py size --username gandalf`
 
 6. Check the current logged-in user:
-    python3 assignment2.py current
+    `python3 assignment2.py current`
 
 7. Show all logged-in users:
-    python3 assignment2.py loggedin
+    `python3 assignment2.py loggedin`
 
 8. Change the group of a user:
-    python3 assignment2.py group --username gandalf --group wizards
+   ` python3 assignment2.py group --username gandalf --group wizards`
 
 9. Change the password for a user:
-    python3 assignment2.py password --username gandalf
+    `python3 assignment2.py password --username gandalf`
 
 Permissions:
 ------------

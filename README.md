@@ -59,7 +59,7 @@ Examples:
 Permissions:
 ------------
 - Most actions require **root** privileges. Run the script as root to ensure proper permissions:
-    sudo python3 assignment2.py <action> [options]
+    `sudo python3 assignment2.py <action> [options]`
 
 Help:
 -----

@@ -58,13 +58,13 @@ Examples:
 
 Permissions:
 ------------
-- Most actions require **root** privileges. Run the script as root to ensure proper permissions:
-    `sudo python3 assignment2.py <action> [options]`
+Most actions require **root** privileges. Run the script as root to ensure proper permissions:\
+  `sudo python3 assignment2.py <action> [options]`
 
 Help:
 -----
-For help or to display usage instructions, run:
-    `python3 assignment2.py -h`
+For help or to display usage instructions, run:\
+`python3 assignment2.py -h`
 
 Notes:
 ------

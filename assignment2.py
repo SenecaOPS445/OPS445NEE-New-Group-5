@@ -12,33 +12,43 @@ import argparse
 import subprocess
 
 def create_user(username):
+    #Yufan
     pass
 
 def delete_user(username):
+    #Yufan
     pass
 
 def list_human_users():
+    #Yufan
     pass
 
 def find_locked_or_disabled_accounts():
+    #Sangeeth
     pass
 
 def check_user_directory_size(username):
+    #Darian
     pass
 
 def check_current_user():
+    #Darian
     pass
 
 def check_logged_in_users():
+    #Sangeeth
     pass
 
 def change_user_group(username, group):
+    #Sangeeth
     pass
 
 def change_user_password(username):
+    #Darian
     pass
 
 def validate_args(args):
+    #Sangeeth
     pass
 
 def show_help():

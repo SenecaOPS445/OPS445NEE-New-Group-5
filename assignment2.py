@@ -34,7 +34,19 @@ def delete_user(username):
 
 #author: YuFan
 def list_human_users():
-    pass
+    print("user listed here")
+    try:
+        # List users by reading the passwd database (getent is more portable)
+        output = subprocess.check_output(["getent", "passwd"]).decode('utf-8')
+        # get the output from subprocess, root:x:0:0:root:/root:/bin/tcsh
+        # we can separate the results by ":", and always choose index 0, save it as a list of data type
+        all_users=[]
+        for line in output.splitlines():
+            all_users.append(line.split(':')[0])
+        for user in all_users:
+            print(f'user_name: {user}')
+    except subprocess.CalledProcessError as e:
+        print(f'Failed to list users: {e}')
 
 
 

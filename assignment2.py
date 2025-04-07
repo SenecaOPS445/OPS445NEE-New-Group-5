@@ -87,6 +87,59 @@ def validate_args(args):
             raise ValueError("The 'group' argument is required for the 'group' action.")
     return True
 
+#Usage functions
+
+def usage_create():
+    print("Usage: python3 assignment2.py create --username USERNAME")
+    print("Action: Creates a new user on the system.")
+    print("Required Argument:")
+    print("  --username USERNAME  add the name of the user to create.")
+
+def usage_delete():
+    print("Usage: python3 assignment2.py delete --username USERNAME")
+    print("Action: Delete an existing user from the system")
+    print("Required Argument:")
+    print(" --username USERNAME  add the name of the user to delete.")
+
+def usage_list():
+    print("Usage: python3 assignment2.py list")
+    print("Description: List all human users on the system.")
+    print("No optional arguments are needed.")
+
+def usage_locked():
+    print("Usage: python3 assignment2.py locked")
+    print("Description: Find all locked accounts on the system.")
+    print("No optional arguments are needed.")
+
+def usage_size():
+    print("Usage: python3 assignment2.py size --username USERNAME")
+    print("Action: Check the size of the user's home directory.")
+    print("Required Argument:")
+    print("  --username USERNAME  add the name of the user.")
+
+def usage_current():
+    print("Usage: python3 assignment2.py current")
+    print("Description: Display the currently logged-in user.")
+    print("No optional arguments are needed.")
+
+def usage_loggedin():
+    print("Usage: python3 assignment2.py loggedin")
+    print("Description: Show all users currently logged into the system.")
+    print("No optional arguments are needed.")
+
+def usage_group():
+    print("Usage: python3 assignment2.py group --username USERNAME --group GROUP")
+    print("Action: Change the group of a user.")
+    print("Required Arguments:")
+    print("  --username USERNAME  add the name of the user.")
+    print("  --group GROUP     add the new group.")
+
+def usage_password():
+    print("Usage: python3 assignment2.py password --username USERNAME")
+    print("Action: Change the password of a user.")
+    print("Required Argument:")
+    print("  --username USERNAME  add the name of the user.")
+
 def show_help():
     pass
 

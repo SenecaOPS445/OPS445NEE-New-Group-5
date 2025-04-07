@@ -140,8 +140,27 @@ def usage_password():
     print("Required Argument:")
     print("  --username USERNAME  add the name of the user.")
 
-def show_help():
-    pass
+def show_help(action=None):
+    if action == 'create':
+        usage_create()
+    elif action == 'delete':
+        usage_delete()
+    elif action == 'list':
+        usage_list()
+    elif action == 'locked':
+        usage_locked()
+    elif action == 'size':
+        usage_size()
+    elif action == 'current':
+        usage_current()
+    elif action == 'loggedin':
+        usage_loggedin()
+    elif action == 'group':
+        usage_group()
+    elif action == 'password':
+        usage_password()
+    else:
+        parser.print_help()
 
 
 # ArgumentParser object named parser with a description for the script
@@ -197,4 +216,4 @@ else:
 
     except ValueError as e:
         print(f"Argument error: {e}")
-        show_help()
+        show_help(args.action)

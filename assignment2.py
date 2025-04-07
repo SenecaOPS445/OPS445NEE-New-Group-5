@@ -24,10 +24,19 @@ def find_locked_or_disabled_accounts():
     pass
 
 def check_user_directory_size(username):
-    pass
+    try:
+        user_info = pwd.getpwnam(username)
+        user_home = user_info.pw_dir
+        result = subprocess.run(['du', '-sh', user_home], capture_output=True, text=True, check=True)
+        print(f"Directory size for {username}: {result.stdout.strip()}")
+    except KeyError:
+        print(f"User '{username}' not found.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error checking directory size: {e}")
 
 def check_current_user():
-    pass
+    current_user = os.getlogin()
+    print(f"Current user: {current_user}")
 
 def check_logged_in_users():
     pass
@@ -36,7 +45,10 @@ def change_user_group(username, group):
     pass
 
 def change_user_password(username):
-    pass
+    try:
+        subprocess.run(['passwd', username], check=True)
+    except subprocess.CalledProcessError:
+        print(f"Failed to change password for user '{username}'.")
 
 def validate_args(args):
     pass

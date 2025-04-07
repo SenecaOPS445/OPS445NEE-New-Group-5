@@ -60,7 +60,7 @@ def check_logged_in_users():
 
 
 def change_user_group(username, group):
-    #This function will change the group of the user
+    # This function will change the group of the user
     # Both username and group need to be specified 
 
     try:
@@ -99,12 +99,12 @@ parser.add_argument(
 parser.add_argument(
     '--username',
     type=str,
-    help="Specify the username (required for actions 'create', 'delete', 'size', 'group', 'password')"
+    help="Specify the username (Must for actions 'create', 'delete', 'size', 'group', 'password')"
 )
 parser.add_argument(
     '--group',
     type=str,
-    help="Specify the group (required for the 'group' action)"
+    help="Specify the group (Must for the 'group' action)"
 )
 
 args = parser.parse_args()

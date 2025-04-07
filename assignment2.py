@@ -24,6 +24,7 @@ def list_human_users():
     pass
 
 def find_locked_or_disabled_accounts():
+    #Sangeeth
     # This function uses passwd and shadow files in the system and will list all the locked human users.
     # If there are no locked accounts found it will print an appropriate message to the screen 
 
@@ -53,7 +54,7 @@ def check_current_user():
     pass
 
 def check_logged_in_users():
-
+    #Sangeeth
     # returns the name of the user currently logged into the system
 
     try:
@@ -66,6 +67,7 @@ def check_logged_in_users():
 
 
 def change_user_group(username, group):
+    #Sangeeth
     # This function will change the group of the user
     # Both username and group need to be specified 
 
@@ -83,6 +85,7 @@ def change_user_password(username):
     pass
 
 def validate_args(args):
+    #Sangeeth
     #If any of the necessary arguments (either username or group) are missing, the function will raise a ValueError with message.
     #if there are no errors it will return true
     if args.action == 'create' or args.action == 'delete' or args.action == 'size' or args.action == 'group' or args.action == 'password':

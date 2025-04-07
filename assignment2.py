@@ -41,7 +41,7 @@ def find_locked_or_disabled_accounts():
         else:
             print("No locked human users found.")
     else:
-        print(f"Error: {result.stderr}")
+        print("Error:", result.stderr)
 
 
 def check_user_directory_size(username):
@@ -53,15 +53,24 @@ def check_current_user():
     pass
 
 def check_logged_in_users():
-    
+
     # returns the name of the user currently logged into the system
 
     print("Current user:", os.getlogin())
 
 
 def change_user_group(username, group):
-    #Sangeeth
-    pass
+    #This function will change the group of the user
+    # Both username and group need to be specified 
+
+    try:
+        subprocess.run(['sudo', 'usermod', '-g', group, username], check=True)
+
+        # If the execution of the command was successful this message will print 
+        print("User", username, "is now in the group", group + ".")
+
+    except:
+        print("Error changing group for user", username)
 
 def change_user_password(username):
     #Darian

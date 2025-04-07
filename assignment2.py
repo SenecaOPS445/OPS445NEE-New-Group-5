@@ -90,17 +90,24 @@ def validate_args(args):
 def show_help():
     pass
 
+
+# ArgumentParser object named parser with a description for the script
 parser = argparse.ArgumentParser(description="User Management Script for Linux Systems")
+
+# Argument 'action' with a list of allowed user management choices
 parser.add_argument(
     'action',
     choices=['create', 'delete', 'list', 'locked', 'size', 'current', 'loggedin', 'group', 'password'],
     help="Action to perform: create, delete, list, locked, size, current, loggedin, group, password"
 )
+
+# 2 Optional arguments '--username' and '--group' that expects a string input
 parser.add_argument(
     '--username',
     type=str,
     help="Specify the username (Must for actions 'create', 'delete', 'size', 'group', 'password')"
 )
+
 parser.add_argument(
     '--group',
     type=str,
@@ -111,6 +118,7 @@ args = parser.parse_args()
 
 if len(vars(args)) == 0:
     show_help()
+
 else:
     try:
         validate_args(args)
@@ -132,6 +140,7 @@ else:
             change_user_group(args.username, args.group)
         elif args.action == 'password':
             change_user_password(args.username)
+
     except ValueError as e:
         print(f"Argument error: {e}")
         show_help()

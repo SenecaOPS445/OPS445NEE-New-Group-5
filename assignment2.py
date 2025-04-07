@@ -11,17 +11,47 @@ import pwd
 import argparse
 import subprocess
 
+#author: YuFan
 def create_user(username):
-    #Yufan
-    pass
+    try:
+        # Using sudo to run the useradd command
+        subprocess.check_call(["sudo", "useradd", username]) #  Subprocess.check_call() runs the command and waits for it to finish
+        print(f'User {username} added successfully.') # Print the output
+    except subprocess.CalledProcessError as e: # If the command fails, it will raise CalledProcessError if command returns a nonzero exit status
+        print(f'Failed to add user {username}: {e}') # Save the error in e and print e
+    except:
+        print('Unknown error occured') # If it's not processerror then print here
 
-def delete_user(username):
-    #Yufan
-    pass
+#author: YuFan
+def delete_user(username):    
+    try:
+        # Delete the user using userdel
+        subprocess.check_call(["sudo", "userdel", username]) # Subprocess.check_call() runs the command and waits for it to finish
+        print(f'User {username} deleted successfully.') # Print the output
+    except subprocess.CalledProcessError as e: # If the command fails, it will raise CalledProcessError
+        print(f'Failed to delete user {username}: {e}') # Save the error in e and print e
+    except:
+        print('Unknown error occured') # If it's not processerror then print here
 
+#author: YuFan
 def list_human_users():
-    #Yufan
-    pass
+    try:
+        # Use subprocess.check_output() to execute the getent command, which grab the information from system password database.
+        # The output is decoded from bytes into human readable string with .decode('utf-8').
+        output = subprocess.check_output(["getent", "passwd"]).decode('utf-8')
+        
+        all_users=[]
+        for line in output.splitlines(): # Grab the output from subprocess, root:x:0:0:root:/root:/bin/bash
+            all_users.append(line.split(':')[0]) # Splitting each line by ":", and choose the index 0, which is username, save it in all_users list.
+        for user in all_users:
+            print(f'user_name: {user}') # Use for loop to print username one by one
+    except subprocess.CalledProcessError: # If the system does not have getent, it will raise CalledProcessError
+        print('Failed to list users') # Print the error
+    except FileNotFoundError: # Catch multiple exceptions
+        print('File not found')
+    except:
+        print('Unknown error occured')
+
 
 def find_locked_or_disabled_accounts():
     #Sangeeth

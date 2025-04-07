@@ -77,8 +77,15 @@ def change_user_password(username):
     pass
 
 def validate_args(args):
-    #Sangeeth
-    pass
+    #If any of the necessary arguments (either username or group) are missing, the function will raise a ValueError with message.
+    #if there are no errors it will return true
+    if args.action == 'create' or args.action == 'delete' or args.action == 'size' or args.action == 'group' or args.action == 'password':
+        if not args.username:
+            raise ValueError("The 'username' argument is required for the selected action.")
+    if args.action == 'group':
+        if not args.group:
+            raise ValueError("The 'group' argument is required for the 'group' action.")
+    return True
 
 def show_help():
     pass

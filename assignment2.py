@@ -56,7 +56,13 @@ def check_logged_in_users():
 
     # returns the name of the user currently logged into the system
 
-    print("Current user:", os.getlogin())
+    try:
+        #Running the who command
+        output = subprocess.check_output(['who'], text=True)
+        print("Currently logged-in users:")
+        print(output.strip())
+    except:
+        print("Error checking logged-in users")
 
 
 def change_user_group(username, group):

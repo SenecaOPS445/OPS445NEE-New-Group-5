@@ -24,7 +24,7 @@ def list_human_users():
     pass
 
 def find_locked_or_disabled_accounts():
-    # This function will list all the locked human users in the system
+    # This function uses passwd and shadow files in the system and will list all the locked human users.
     # If there are no locked accounts found it will print an appropriate message to the screen 
 
     #command to execute in the shell so it would only list users with uid range 1000 to 65534
@@ -53,8 +53,11 @@ def check_current_user():
     pass
 
 def check_logged_in_users():
-    #Sangeeth
-    pass
+    
+    # returns the name of the user currently logged into the system
+
+    print("Current user:", os.getlogin())
+
 
 def change_user_group(username, group):
     #Sangeeth

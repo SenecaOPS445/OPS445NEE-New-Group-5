@@ -10,6 +10,8 @@ import os
 import pwd
 import argparse
 import subprocess
+import getpass
+
 
 #author: YuFan
 def create_user(username):

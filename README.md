@@ -58,7 +58,7 @@ Examples:
 
 Permissions:
 ------------
-Most actions require **root** privileges. Run the script with sudo or as root to ensure proper permissions:\
+Most actions require **root** privileges. Run the script with **sudo** or as **root** to ensure proper permissions:\
   `sudo python3 assignment2.py <action> [options]`
 
 Help:

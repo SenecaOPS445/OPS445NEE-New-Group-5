@@ -24,8 +24,25 @@ def list_human_users():
     pass
 
 def find_locked_or_disabled_accounts():
-    #Sangeeth
-    pass
+    # This function will list all the locked human users in the system
+    # If there are no locked accounts found it will print an appropriate message to the screen 
+
+    #command to execute in the shell so it would only list users with uid range 1000 to 65534
+    command = "sudo awk -F: 'NR==FNR && $3>=1000 && $3<65534 {u[$1]; next} $1 in u && $2 ~ /^[!*]/ {print $1}' /etc/passwd /etc/shadow"
+
+    #Capturing the string output of this command to the variable result
+    result = subprocess.run(command, shell=True, text=True, capture_output=True)
+
+    # Check if there was any output and print the results 
+    if result.returncode == 0:
+        if result.stdout:
+            print("Locked human users:")
+            print(result.stdout)
+        else:
+            print("No locked human users found.")
+    else:
+        print(f"Error: {result.stderr}")
+
 
 def check_user_directory_size(username):
     #Darian

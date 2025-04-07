@@ -116,6 +116,7 @@ parser.add_argument(
 
 args = parser.parse_args()
 
+#If there are no arguments the script will call the show_help function 
 if len(vars(args)) == 0:
     show_help()
 
